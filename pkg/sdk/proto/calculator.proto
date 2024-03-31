@@ -1,0 +1,21 @@
+syntax = "proto3";
+
+package auth;
+
+option go_package = "calcv1";
+
+service Calculator {
+    rpc Add(Request) returns (Responce);
+    rpc Sub(Request) returns (Responce);
+    rpc Mul(Request) returns (Responce);
+    rpc Div(Request) returns (Responce);
+}
+
+message Request {
+    int64 a = 1;
+    int64 b = 2;
+}
+
+message Responce {
+    int64 result = 1;
+}
